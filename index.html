@@ -1,13 +1,40 @@
-
 <html>
 
 <head>
-    <title>Riya's Portfolio!</title>
+    <style>
+        /* Webfont */
+        @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
+        body {
+            background-color: #f6f6f6;
+            font-size: 24px;
+            font-family: 'Montserrat', Helvetica Neue, Helvetica, sans-serif;
+        }
+
+        p {
+            text-align: center;
+            margin: 2em;
+            color: #2b2b2b;
+        }
+    </style>
 </head>
 
 <body>
-    Loading :)
+    <p>My Portfolio website is in loading 🚀</p>
+    <p>It should be done before<time><strong id="seconds">6</strong> seconds</time>.</p>
+
     <script>
+        var el = document.getElementById('seconds'),
+            total = el.innerHTML,
+            timeinterval = setInterval(function() {
+                total = --total;
+                el.textContent = total;
+                if (total <= 0) {
+                    total = 0;
+                }
+            }, 1000);
+
+
         async function FetchHtml() {
             let response = await fetch(
                 'https://codegen.plasmic.app/api/v1/loader/html/preview/rK195vGPboZZB4rfMzJLBU/Homepage?hydrate=1&embedHydrate=1', {
@@ -27,6 +54,7 @@
         }
         Do();
     </script>
+
 </body>
 
 </html>
