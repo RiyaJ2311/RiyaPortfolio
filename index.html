@@ -1,23 +1,32 @@
+
 <html>
+
 <head>
-	
+    <title>Riya's Portfolio!</title>
 </head>
+
 <body>
-	
-	<script>
-		const response = await fetch(
-  'https://codegen.plasmic.app/api/v1/loader/html/preview/rK195vGPboZZB4rfMzJLBU/Homepage?hydrate=1&embedHydrate=1',
-  {
-    headers: {
-      // Your project ID and public API token
-      'x-plasmic-api-project-tokens': 'rK195vGPboZZB4rfMzJLBU:Y0I8SFQyHAcEuhBl9y7aCzrp8Nwt8RJwsdJir8Zq3YcpfNR9urXohmTLcVL2LDuMf23cn7Ziz8seJ9Dw'
-      // You can find your PROJECT token by visiting
-      // https://studio.plasmic.app/projects/[rK195vGPboZZB4rfMzJLBU]/docs/loader#showToken=true
-    }
-  }
-);
-const result = await response.json();
-document.body.innerHTML = result.html;
-	</script>
+    Loading :)
+    <script>
+        async function FetchHtml() {
+            let response = await fetch(
+                'https://codegen.plasmic.app/api/v1/loader/html/preview/rK195vGPboZZB4rfMzJLBU/Homepage?hydrate=1&embedHydrate=1', {
+                    headers: {
+                        // Your project ID and public API token
+                        'x-plasmic-api-project-tokens': 'rK195vGPboZZB4rfMzJLBU:Y0I8SFQyHAcEuhBl9y7aCzrp8Nwt8RJwsdJir8Zq3YcpfNR9urXohmTLcVL2LDuMf23cn7Ziz8seJ9Dw'
+                        // You can find your PROJECT token by visiting
+                        // https://studio.plasmic.app/projects/[rK195vGPboZZB4rfMzJLBU]/docs/loader#showToken=true
+                    }
+                }
+            );
+            return await response.json(); // Returns it as Promise
+        }
+        async function Do() {
+            const result = await FetchHtml();
+            document.body.innerHTML = result.html;
+        }
+        Do();
+    </script>
 </body>
+
 </html>
